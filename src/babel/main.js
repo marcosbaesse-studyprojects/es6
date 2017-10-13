@@ -1,20 +1,35 @@
-"use strict";
+'use strict';
 
-// Antes do ES6
-function test(valueA) {
-    var valueB = arguments.length < 2 || arguments[1] === undefined ? 4 : arguments[1];
+var list = ['teste', 34, { name: 'Marcos' }];
 
-    return valueA + valueB;
+// antes do ES6
+
+for (var index in list) {
+    console.log(list[index]);
 }
-
-console.log(test(2)); // 6
 
 // com ES6
+var _iteratorNormalCompletion = true;
+var _didIteratorError = false;
+var _iteratorError = undefined;
 
-function testES6(valueA) {
-    var valueB = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 4;
+try {
+    for (var _iterator = list[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var value = _step.value;
 
-    return valueA + valueB;
+        console.log(value);
+    }
+} catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+} finally {
+    try {
+        if (!_iteratorNormalCompletion && _iterator.return) {
+            _iterator.return();
+        }
+    } finally {
+        if (_didIteratorError) {
+            throw _iteratorError;
+        }
+    }
 }
-
-console.log(testES6(2)); // 6
