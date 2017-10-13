@@ -1,5 +1,3 @@
-'use strict';
-
 var number = 123456.32;
 var En = Intl.NumberFormat('en-US').format(number);
 var De = Intl.NumberFormat('de-DE').format(number);
