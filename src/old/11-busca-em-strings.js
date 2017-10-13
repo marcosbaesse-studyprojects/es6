@@ -1,5 +1,3 @@
-'use strict';
-
 // antes do ES6
 console.log('Hello'.indexOf('ello') === 1); // true
 
